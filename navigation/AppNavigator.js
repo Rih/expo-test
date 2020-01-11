@@ -29,6 +29,7 @@ const LoginNavigator = createStackNavigator(
                 header: null
             }
         },
+
         Policy: PolicyScreen
     },
     {

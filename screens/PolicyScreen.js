@@ -1,7 +1,15 @@
-import React from 'react'
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import React from 'react';
+import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+
+import { useDispatch } from 'react-redux';
+
+import * as authActions from '../store/actions/auth';
+
 
 const PolicyScreen = props => {
+
+    const dispatch = useDispatch();
+
     return (
         <ScrollView>
             <View style={styles.container} >
@@ -16,11 +24,18 @@ const PolicyScreen = props => {
                 </Text>
             </View>
 
+
+            <Button
+                title="Logout me"
+                onPress={() => dispatch(authActions.logout())}>
+
+            </Button>
+
         </ScrollView>
     )
 }
 
-PolicyScreen.navigationOption= {
+PolicyScreen.navigationOption = {
     headerTitle: 'Politicas'
 }
 

@@ -1,26 +1,23 @@
-import { AUTHER, SAVE_SOMETHING } from '../actions/auth'
+import { AUTHENTICATION, LOGOUT } from '../actions/auth'
 
 const initialState = {
-    payload = []
+    isAuth: false
 }
 
 
 export default (state = initialState, action) => {
-    switch(action.type){
-        case AUTHER:
+    switch (action.type) {
+
+        case AUTHENTICATION:
             return {
                 ...state,
-                payload: action.payload
-            }
-        case SAVE_SOMETHING:
-            return {
-                ...state,
-                payload: []
-            }
-        
+                isAuth: action.isAuth
+            };
+
+        case LOGOUT:
+            return initialState;
+
         default:
-            return {
-                ...state,
-            }
+            return state;
     }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import ReduxThunk from 'redux-thunk'
+import ReduxThunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+
 import authReducer from './store/reducers/auth'
 import { StyleSheet, Text, View } from 'react-native';
 import NavigationContainer from './navigation/NavigationContainer'
@@ -13,6 +15,9 @@ const store = createStore(rootReducer, applyMiddleware(ReduxThunk))
 
 export default function App() {
   return (
+    // <Text>
+    //   HOOOOOLLAAAA
+    // </Text>
     <Provider store={ store }>
       <NavigationContainer />
     </Provider>

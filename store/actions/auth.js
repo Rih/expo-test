@@ -1,9 +1,22 @@
-export const AUTHER = 'AUTHER'
-export const SAVE_SOMETHING = 'SAVE_SOMETHING'
+export const LOGOUT = 'LOGOUT';
+export const AUTHENTICATION = 'AUTHENTICATION';
 
-export const dummyAction = (payload) => {
+export const dummyAction = (data) => {
     return {
-        auth: AUTHER,
-        payload: []
+        auth: data.isAuth
+    }
+}
+
+export const logout = () => {
+    return { type: LOGOUT };
+};
+
+export const login = () => {
+
+    return async dispatch => {
+        dispatch({
+            type: AUTHENTICATION,
+            isAuth: true
+        });
     }
 }
